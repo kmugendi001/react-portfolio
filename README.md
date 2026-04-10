@@ -74,11 +74,11 @@ You can deploy the site using platforms like:
 
 ## 📬 Contact
 
-Feel free to connect with me through the Contact section on the site or via [LinkedIn](https://linkedin.com/in/codewithkinu) or [Email](mailto:codeithkinu@gmail.com).
+Feel free to connect with me through the Contact section on the site or via [LinkedIn](#) or [Email](mailto:hello@piuskariuki.com).
 
 ---
 
-**Made with ❤️ by Sahil  using React, Vite & Tailwind CSS**
+**Made with ❤️ by Pius Kariuki using React, Vite & Tailwind CSS**
 
 
 ## 📬 here is privious homepage.. -----
@@ -187,7 +187,7 @@ export const HeroSection = () => {
               className="text-primary inline-block ml-3 relative"
               variants={itemVariants}
             >
-              Sahil
+              Pius
               <motion.span 
                 className="absolute -bottom-2 left-0 h-1 bg-primary w-full"
                 initial={{ scaleX: 0 }}

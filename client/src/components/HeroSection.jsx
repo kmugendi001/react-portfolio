@@ -9,20 +9,20 @@ export const HeroSection = () => {
   const [displayedCode, setDisplayedCode] = useState("");
 
   const codeSnippets = [
-    "import { FullStackDeveloper } from 'sahil.dev';",
+    "import { SecurityResearcher } from 'pius.dev';",
     "",
-    "const developer = new FullStackDeveloper({",
-    "  name: 'Sahil',",
-    "  stack: ['React', 'Next.js', 'Node.js', 'TypeScript'],",
-    "  focus: 'Building scalable web applications',",
-    "  status: 'Open to new opportunities'",
+    "const researcher = new SecurityResearcher({",
+    "  name: 'Pius',",
+    "  focus: 'Protecting applications through security research',",
+    "  expertise: ['Application Security', 'Threat Modeling', 'Cloud Hardening'],",
+    "  status: 'Open to security engagements',",
     "});",
     "",
-    "await developer.launchPortfolio();",
-    "// Featured: E-commerce, SaaS, Enterprise, Startup MVPs",
+    "await researcher.launchPortfolio();",
+    "// Featured: Security assessments, penetration testing, secure architecture",
     "",
-    "developer.connect();",
-    "console.log('🚀 Let's build something exceptional together!');"
+    "researcher.connect();",
+    "console.log('🔒 Building secure systems with confidence');"
   ];
 
   const achievements = [
@@ -54,8 +54,11 @@ export const HeroSection = () => {
   }, [displayedCode, currentCodeLine]);
 
   const handleViewResume = () => {
-    // Open resume in new tab
-    window.open('/Sahil-resume.pdf', '_blank', 'noopener,noreferrer');
+    // Navigate to CV section
+    const cvSection = document.querySelector('#cv');
+    if (cvSection) {
+      cvSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -104,14 +107,14 @@ export const HeroSection = () => {
             </motion.div>
 
             <motion.h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
-              <span className="block text-foreground">I'm Sahil</span>
+              <span className="block text-foreground">I'm Pius</span>
               <motion.span className="block bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent mt-2" animate={{ backgroundPosition: ['0%', '100%', '0%'] }} transition={{ duration: 8, repeat: Infinity }} style={{ backgroundSize: '200% 100%' }}>
-                Full-Stack Engineer
+                Security Researcher & Consultant
               </motion.span>
             </motion.h1>
 
             <motion.p className="text-lg sm:text-xl text-muted-foreground mt-6 leading-relaxed max-w-2xl" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
-              I build <span className="text-primary font-semibold">high-performance web applications</span> that drive business growth. Specializing in React, Node.js, and scalable architecture for startups and enterprises.
+              I secure applications and help teams build resilient systems. Specializing in application security, threat modeling, and cloud hardening for high-value products.
             </motion.p>
 
             <motion.div className="grid grid-cols-2 sm:grid-cols-4 gap-4 my-8" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>

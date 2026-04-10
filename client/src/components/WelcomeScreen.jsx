@@ -28,11 +28,12 @@ const WelcomeScreen = ({ onWelcomeComplete }) => {
   };
 
   const currentColors = colors[theme] || colors.dark;
-  const portfolioUrl = "www.devlyhub.in";
+  const portfolioUrl = "pius.dev";
   const welcomeMessages = [
-    "Crafting digital experiences",
-    "Software Engineer",
-    "Full-stack development"
+    "Crafting secure digital experiences",
+    "Security Researcher",
+    "Security Consultant",
+    "Cybersecurity Specialist"
   ];
 
   useEffect(() => {

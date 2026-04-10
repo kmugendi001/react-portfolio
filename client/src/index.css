@@ -64,27 +64,27 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
+    --background: 180 100% 97%; /* Light cyan-green for fresh, motivating feel */
     --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
 
-    --primary: 250 47% 60%;
+    --primary: 200 100% 50%; /* Bright blue for energy */
     --primary-foreground: 210 40% 98%;
 
-    --border: 214 32% 91%;
+    --border: 180 20% 85%; /* Light green-blue border */
   }
 
   .dark {
-    --background: 222 47% 4%;
-    --foreground: 213 31% 91%;
+    --background: 220 100% 8%; /* Deep blue-black for sophistication */
+    --foreground: 180 100% 90%; /* Light cyan for contrast */
 
-    --card: 222 47% 8%;
+    --card: 220 100% 12%; /* Dark blue card */
 
-    --primary: 250 65% 65%;
-    --primary-foreground: 213 31% 91%;
+    --primary: 160 100% 50%; /* Vibrant green for motivation */
+    --primary-foreground: 220 100% 8%;
 
-    --border: 217 33% 20%;
+    --border: 220 50% 20%; /* Dark blue border */
   }
 
   * {

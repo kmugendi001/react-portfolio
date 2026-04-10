@@ -15,24 +15,25 @@ export const AboutSection = () => {
   ];
 
   const techStack = [
-    { category: "Frontend", items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "Tailwind"] },
-    { category: "Backend", items: ["Node.js", "Express", "Java", "Python"] },
-    { category: "Cloud", items: ["AWS", "Docker", "Vercel", "MongoDB"] }
+    { category: "Web Security", items: ["Burp Suite", "OWASP ZAP", "SQLmap", "Nmap"] },
+    { category: "Application Security", items: ["Metasploit", "Wireshark", "Vulnerability Assessment", "Secure Code Review"] },
+    { category: "Programming", items: ["Python", "JavaScript", "Bash", "Java"] },
+    { category: "Platforms", items: ["Bugcrowd", "HackTheBox", "TryHackMe", "HackingHub", "Linux"] }
   ];
 
-  const features = ["Full-stack expertise", "Clean, maintainable code", "Performance optimization", "Agile methodology", "24/7 support", "Timely delivery"];
+  const features = ["CTF & HackingHub expertise", "Bugcrowd bug bounty experience", "Vulnerability assessment", "Secure code review", "Responsible disclosure", "Technical content creator"];
 
   const socialLinks = [
-    { icon: <Github className="h-5 w-5" />, href: "https://www.github.com/sahilmd01" },
-    { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/codewithkinu" },
+    { icon: <Github className="h-5 w-5" />, href: "#" },
+    { icon: <Linkedin className="h-5 w-5" />, href: "#" },
     { icon: <Twitter className="h-5 w-5" />, href: "#" },
-    { icon: <Mail className="h-5 w-5" />, href: "mailto:sahilmd.dev@gmail.com" }
+    { icon: <Mail className="h-5 w-5" />, href: "mailto:hello@piuskariuki.com" }
   ];
 
   const tabContent = {
-    personal: "Passionate about creating digital solutions that make a difference. When I'm not coding, I'm exploring new technologies, contributing to open-source, and mentoring aspiring developers.",
-    professional: "With 1+ years in full-stack development, I've delivered 15+ successful projects using modern technologies. I specialize in scalable architecture and performance optimization.",
-    approach: "I believe in clean code, thorough testing, and user-centered design. My process emphasizes collaboration, agile methodologies, and continuous improvement."
+    personal: "Passionate cybersecurity enthusiast based in Nairobi, Kenya. I've solved numerous CTF challenges and HackingHub exercises to sharpen my security skills. Active bug bounty hunter on Bugcrowd finding and responsibly disclosing vulnerabilities. Currently working as a consulting security engineer, and I love sharing security insights through my technical blog.",
+    professional: "As a consulting security engineer, I've helped organizations identify and remediate critical vulnerabilities. Actively participating in bug bounty programs on Bugcrowd, with a strong track record of finding impactful security issues. Experienced in penetration testing, vulnerability assessment, and secure code review.",
+    approach: "I believe in thorough security research, responsible disclosure, and continuous learning. My approach emphasizes vulnerability analysis, clear documentation, and collaborative communication with development teams to build secure systems."
   };
 
   useEffect(() => {
@@ -49,8 +50,8 @@ export const AboutSection = () => {
   // Programmatic download function
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/Sahil-resume.pdf'; // Must be in public folder
-    link.download = 'Sahil-resume.pdf';
+    link.href = '/pius-kariuki-resume.pdf'; // Must be in public folder
+    link.download = 'pius-kariuki-resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -102,7 +103,7 @@ export const AboutSection = () => {
                   {/* Profile Image */}
                   <div className="relative flex-shrink-0">
                     <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-4 border-primary/20 shadow-2xl transition-all duration-500 group-hover:border-primary/40 group-hover:scale-105 md:group-hover:scale-110 relative">
-                      <img src="/profile-logo.png" alt="MD Sahil" className="w-full h-full object-cover" />
+                      <img src="/profile-logo.png" alt="Pius Kariuki" className="w-full h-full object-cover" />
                       <div className="absolute -bottom-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 bg-green-500 rounded-full border-4 border-background flex items-center justify-center">
                         <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse" />
                       </div>
@@ -111,8 +112,8 @@ export const AboutSection = () => {
 
                   {/* Achievements */}
                   <div className="flex-1 text-center md:text-left">
-                    <h2 className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">MD Sahil</h2>
-                    <p className="text-primary text-base sm:text-lg font-semibold mb-3 sm:mb-4">Full Stack Developer</p>
+                    <h2 className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">Pius Kariuki</h2>
+                    <p className="text-primary text-base sm:text-lg font-semibold mb-3 sm:mb-4">Security Engineer & Bug Bounty Hunter</p>
                     <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
                       {achievements.map((achievement, index) => (
                         <div key={index} className={`p-2 sm:p-3 rounded-xl bg-background/50 border border-border transition-all duration-300 hover:scale-105 hover:border-primary/30 ${counter === index ? 'bg-primary/10 border-primary/50' : ''}`}>

@@ -2,89 +2,82 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Import your images
-import htmlIcon from "@/assets/icons/html.png";
-import cssIcon from "@/assets/icons/css.png";
-import sassIcon from "@/assets/icons/saas.png";
-import jsIcon from "@/assets/icons/javascript.png";
-import tsIcon from "@/assets/icons/typescript.png";
-import reactIcon from "@/assets/icons/react.png";
-import nextjsIcon from "@/assets/icons/nextjs.png";
 import nodejsIcon from "@/assets/icons/nodejs.png";
 import expressIcon from "@/assets/icons/express.png";
 import mongodbIcon from "@/assets/icons/mongodb.png";
 import postgresqlIcon from "@/assets/icons/postgresql.png";
-import graphqlIcon from "@/assets/icons/graphql.png";
-import javaIcon from "@/assets/icons/java.png";
 import pythonIcon from "@/assets/icons/python.png";
 import gitIcon from "@/assets/icons/git.png";
 import githubIcon from "@/assets/icons/github.png";
 import dockerIcon from "@/assets/icons/docker.png";
-import firebaseIcon from "@/assets/icons/firebase.png";
 import vscodeIcon from "@/assets/icons/vscode.png";
-import clearkIcon from "@/assets/icons/cleark.png";
+import burpsuiteIcon from "@/assets/icons/burpsuite.svg";
+import owaspzapIcon from "@/assets/icons/owaspzap.svg";
+import wiresharkIcon from "@/assets/icons/wireshark.svg";
+import metasploitIcon from "@/assets/icons/metasploit.svg";
+import nmapIcon from "@/assets/icons/nmap.svg";
+import mobsfIcon from "@/assets/icons/mobsf.svg";
 import SQLIcon from "@/assets/icons/sql.png";
 import MySQLIcon from "@/assets/icons/mysql.png";
+import javaIcon from "@/assets/icons/java.png";
 
 const skills = [
-  // Frontend
-  { name: "HTML5", level: 95, category: "frontend", icon: "html" },
-  { name: "CSS3", level: 90, category: "frontend", icon: "css" },
-  { name: "SASS", level: 85, category: "frontend", icon: "sass" },
-  { name: "JavaScript", level: 90, category: "frontend", icon: "javascript" },
-  { name: "TypeScript", level: 75, category: "frontend", icon: "typescript" },
-  { name: "React", level: 90, category: "frontend", icon: "react" },
-  { name: "Next.js", level: 75, category: "frontend", icon: "nextjs" },
-
   // Backend
   { name: "Node.js", level: 90, category: "backend", icon: "nodejs" },
-  { name: "Express", level: 85, category: "backend", icon: "express" },
+  { name: "Express", level: 90, category: "backend", icon: "express" },
+  { name: "Django", level: 85, category: "backend", icon: "python" },
+  { name: "Python", level: 90, category: "backend", icon: "python" },
   { name: "MongoDB", level: 90, category: "backend", icon: "mongodb" },
-  { name: "PostgreSQL", level: 65, category: "backend", icon: "postgresql" },
-  { name: "GraphQL", level: 60, category: "backend", icon: "graphql" },
-  { name: "Java", level: 60, category: "backend", icon: "java" },
-  { name: "Python", level: 60, category: "backend", icon: "python" },
+  { name: "PostgreSQL", level: 85, category: "backend", icon: "postgresql" },
+  { name: "MySQL", level: 90, category: "backend", icon: "mysql" },
+  { name: "SQL", level: 90, category: "backend", icon: "sql" },
+  { name: "Docker", level: 85, category: "backend", icon: "docker" },
+  { name: "Git", level: 90, category: "backend", icon: "git" },
+  { name: "GitHub", level: 90, category: "backend", icon: "github" },
+  { name: "VS Code", level: 85, category: "backend", icon: "vscode" },
 
-  // Tools
-  { name: "Git", level: 90, category: "tools", icon: "git" },
-  { name: "GitHub", level: 90, category: "tools", icon: "github" },
-  { name: "Docker", level: 70, category: "tools", icon: "docker" },
-  { name: "Firebase", level: 80, category: "tools", icon: "firebase" },
-  { name: "VS Code", level: 95, category: "tools", icon: "vscode" },
-  { name: "Cleark", level: 90, category: "tools", icon: "cleark" },
-  { name: "SQL", level: 90, category: "tools", icon: "sql" },
-  { name: "MySQL", level: 90, category: "tools", icon: "mysql" },
+  // Web Security
+  { name: "Burp Suite", level: 90, category: "web-security", icon: "burpsuite" },
+  { name: "OWASP ZAP", level: 85, category: "web-security", icon: "owaspzap" },
+  { name: "SQLmap", level: 85, category: "web-security", icon: "sql" },
+  { name: "Nmap", level: 88, category: "web-security", icon: "nmap" },
+
+  // Application Security
+  { name: "Metasploit", level: 80, category: "app-security", icon: "metasploit" },
+  { name: "Wireshark", level: 85, category: "app-security", icon: "wireshark" },
+
+  // Mobile Security
+  { name: "Android Security", level: 85, category: "mobile", icon: "java" },
+  { name: "MobSF", level: 85, category: "mobile", icon: "mobsf" },
 ];
 
 const categories = [
   { id: "all", label: "All Skills", color: "bg-gradient-to-r from-purple-500 to-pink-500" },
-  { id: "frontend", label: "Frontend", color: "bg-gradient-to-r from-blue-500 to-cyan-500" },
   { id: "backend", label: "Backend", color: "bg-gradient-to-r from-green-500 to-emerald-500" },
-  { id: "tools", label: "Tools", color: "bg-gradient-to-r from-orange-500 to-yellow-500" },
+  { id: "web-security", label: "Web Security", color: "bg-gradient-to-r from-red-500 to-orange-500" },
+  { id: "app-security", label: "Application Security", color: "bg-gradient-to-r from-fuchsia-500 to-pink-500" },
+  { id: "mobile", label: "Mobile Security", color: "bg-gradient-to-r from-blue-500 to-cyan-500" },
 ];
 
 const iconImages = {
-  html: htmlIcon,
-  css: cssIcon,
-  sass: sassIcon,
-  javascript: jsIcon,
-  typescript: tsIcon,
-  react: reactIcon,
-  nextjs: nextjsIcon,
   nodejs: nodejsIcon,
   express: expressIcon,
   mongodb: mongodbIcon,
   postgresql: postgresqlIcon,
-  graphql: graphqlIcon,
-  java: javaIcon,
   python: pythonIcon,
   git: gitIcon,
   github: githubIcon,
   docker: dockerIcon,
-  firebase: firebaseIcon,
   vscode: vscodeIcon,
-  cleark: clearkIcon,
+  burpsuite: burpsuiteIcon,
+  owaspzap: owaspzapIcon,
+  wireshark: wiresharkIcon,
+  metasploit: metasploitIcon,
+  nmap: nmapIcon,
+  mobsf: mobsfIcon,
   sql: SQLIcon,
   mysql: MySQLIcon,
+  java: javaIcon,
 };
 
 const SkillBar = ({ level }) => (
@@ -155,10 +148,10 @@ export const SkillsSection = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
-            My Skills
+            Technical Expertise
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Technologies I've mastered and my proficiency levels
+            Backend development, web security, application security, and mobile security
           </p>
         </motion.div>
 

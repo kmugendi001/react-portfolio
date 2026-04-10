@@ -28,8 +28,8 @@ export const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: <Mail size={16} />, text: "hello@piuskariuki.com", href: "mailto:hello@piuskariuki.com" },
-    { icon: <Phone size={16} />, text: "+91 9315145594", href: "tel:+919315145594" },
+    { icon: <Mail size={16} />, text: "mugendipius960@gmail.com", href: "mailto:mugendipius960@gmail.com" },
+    { icon: <Phone size={16} />, text: "+254 795 660 272", href: "tel:+254795660272" },
   ];
 
   const containerVariants = {
